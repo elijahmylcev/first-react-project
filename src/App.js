@@ -1,19 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+// Можно использовать стрелочные функции для создания компонентов
+function Header() {
+  return <h2>Hello world!</h2>;
+}
+
+function Field() {
+  const placeHolder = 'Type here';
+  const styledField = {
+    width: '300px',
+  };
+  return (
+    <input
+      type="text"
+      placeholder={placeHolder}
+      style={styledField}
+    />
+  );
+}
+
+function Btn() {
+  const text = 'Log in';
+  // const res = () => 'Log in';
+  const logged = false;
+  // return <button type="submit">{res()}</button>;
+  return <button type="submit">{ logged ? 'Enter' : text }</button>;
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-      </header>
+      <Header />
+      <Field />
+      <Btn />
     </div>
   );
 }
