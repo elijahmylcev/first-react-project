@@ -1,4 +1,5 @@
 import './App.css';
+import { Component } from 'react';
 // Можно использовать стрелочные функции для создания компонентов
 function Header() {
   return <h2>Hello world!</h2>;
@@ -35,5 +36,22 @@ function App() {
     </div>
   );
 }
+
+// Старый метод
+// class Field extends Component {
+//   render() {
+//     const placeHolder = 'Type here';
+//     const styledField = {
+//       width: '300px',
+//     };
+//     return (
+//       <input
+//         type="text"
+//         placeholder={placeHolder}
+//         style={styledField}
+//       />
+//     );
+//   }
+// }
 
 export default App;
