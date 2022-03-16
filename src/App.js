@@ -1,5 +1,5 @@
 import './App.css';
-import { Component } from 'react';
+// import { Component } from 'react';
 // Можно использовать стрелочные функции для создания компонентов
 function Header() {
   return <h2>Hello world!</h2>;
