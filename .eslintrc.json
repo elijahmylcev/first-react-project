@@ -22,14 +22,7 @@
     "rules": {
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
-        // "space-in-brackets": ["error", "always", {
-        //     "singleValue": true,
-        //     "objectsInArrays": true,
-        //     "arraysInArrays": true,
-        //     "arraysInObjects": true,
-        //     "objectsInObjects": true,
-        //     "propertyName": true
-        //   }]
+        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }]
         }
 }
