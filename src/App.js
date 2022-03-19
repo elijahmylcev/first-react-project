@@ -32,6 +32,7 @@ class WhoAmI extends Component {
     super();
     this.state = {
       years: 1,
+      position: '',
     };
   }
 
@@ -41,6 +42,12 @@ class WhoAmI extends Component {
     }));
   };
 
+  commitInputChanges = (e) => {
+    this.setState({
+      position: e.target.value,
+    });
+  };
+
   render() {
     const { ...props } = this.props;
     const { ...state } = this.state;
@@ -48,15 +55,29 @@ class WhoAmI extends Component {
       <div>
         <h1>
           <button onClick={this.increment} type="submit">Increment</button>
+          <br />
           My name is
           { props.name}
-          , surname -
+          ,
+          <br />
+          {' '}
+          surname -
           { props.surname}
           ,
+          <br />
           age -
           {state.years}
+          ,
+          <br />
+          position -
+          { state.position}
         </h1>
         <a href={props.link}>My profile</a>
+
+        <form>
+          <span>Введите должность</span>
+          <input type="text" onChange={this.commitInputChanges} />
+        </form>
       </div>
     );
   }
