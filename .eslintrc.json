@@ -23,6 +23,12 @@
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }]
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
+        "react/prefer-stateless-function": [0],
+        "max-classes-per-file": [
+            "error",
+            3
+        ],
+        "no-console":"off"
         }
 }
