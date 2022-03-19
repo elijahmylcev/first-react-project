@@ -34,19 +34,20 @@ class WhoAmI extends Component {
       years: 1,
       position: '',
     };
+    this.increment = this.increment.bind(this);
   }
-
-  increment = () => {
-    this.setState((state) => ({
-      years: state.years + 1,
-    }));
-  };
 
   commitInputChanges = (e) => {
     this.setState({
       position: e.target.value,
     });
   };
+
+  increment() {
+    this.setState((state) => ({
+      years: state.years + 1,
+    }));
+  }
 
   render() {
     const { ...props } = this.props;
@@ -66,7 +67,7 @@ class WhoAmI extends Component {
           ,
           <br />
           age -
-          {state.years}
+          { state.years}
           ,
           <br />
           position -
