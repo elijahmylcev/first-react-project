@@ -1,31 +1,33 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+import styled from 'styled-components';
 
-// function Header() {
-//   return <h2>Hello world!</h2>;
-// }
+const EmpItem = styled.div`
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0,0,0, .20);
+  a {
+    display: block;
+    color: ${(props) => (props.active ? 'orange' : 'black')};
+  }
+  input {
+    display: block;
+    margin: 0 auto;
+  }
+`;
 
-// function Field() {
-//   const placeHolder = 'Type here';
-//   const styledField = {
-//     width: '300px',
-//   };
-//   return (
-//     <input
-//       type="text"
-//       placeholder={placeHolder}
-//       style={styledField}
-//     />
-//   );
-// }
+const Header = styled.h2`
+  font-size: 22px
+`;
 
-// function Btn() {
-//   const text = 'Log in';
-//   // const res = () => 'Log in';
-//   const logged = false;
-//   // return <button type="submit">{res()}</button>;
-//   return <button type="submit">{ logged ? 'Enter' : text }</button>;
-// }
+export const Button = styled.button`
+  display: block;
+  padding: 5px 15px;
+  background-color: gold;
+  border: 1px solid black;
+  box-shadow: 5px 5px 10px rgba(0,0,0,.2)
+`;
 
 class WhoAmI extends Component {
   constructor() {
@@ -53,9 +55,9 @@ class WhoAmI extends Component {
     const { ...props } = this.props;
     const { ...state } = this.state;
     return (
-      <div>
-        <h1>
-          <button onClick={this.increment} type="submit">Increment</button>
+      <EmpItem active>
+        <Button onClick={this.increment} type="submit">Increment</Button>
+        <Header>
           <br />
           My name is
           { props.name}
@@ -72,17 +74,22 @@ class WhoAmI extends Component {
           <br />
           position -
           { state.position}
-        </h1>
+        </Header>
         <a href={props.link}>My profile</a>
 
         <form>
           <span>Введите должность</span>
           <input type="text" onChange={this.commitInputChanges} />
         </form>
-      </div>
+      </EmpItem>
     );
   }
 }
+
+const Wrapper = styled.div`
+  width: 600px;
+  margin: 80px auto 0 auto;
+`;
 
 class App extends Component {
   constructor() {
@@ -96,9 +103,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <Wrapper>
         <WhoAmI name={this.person.name} surname={this.person.surname} link={this.person.link} />
-      </div>
+      </Wrapper>
     );
   }
 }
