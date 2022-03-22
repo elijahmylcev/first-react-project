@@ -2,6 +2,7 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import App, { Button } from './App';
+import BootstrapTest from './BootstrapTest';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -15,6 +16,7 @@ ReactDOM.render(
   <StrictMode>
     <App />
     <BigButton as="a">Example</BigButton>
+    <BootstrapTest />
   </StrictMode>,
   document.getElementById('root'),
 );
