@@ -16,11 +16,9 @@ const EmpItem = styled.div`
     margin: 0 auto;
   }
 `;
-
 const Header = styled.h2`
-  font-size: 22px
+  font-size: 22px;
 `;
-
 export const Button = styled.button`
   display: block;
   padding: 5px 15px;
@@ -28,7 +26,6 @@ export const Button = styled.button`
   border: 1px solid black;
   box-shadow: 5px 5px 10px rgba(0,0,0,.2)
 `;
-
 class WhoAmI extends Component {
   constructor() {
     super();
@@ -39,11 +36,11 @@ class WhoAmI extends Component {
     this.increment = this.increment.bind(this);
   }
 
-  commitInputChanges = (e) => {
+  commitInputChanges(e) {
     this.setState({
       position: e.target.value,
     });
-  };
+  }
 
   increment() {
     this.setState((state) => ({
@@ -76,7 +73,6 @@ class WhoAmI extends Component {
           { state.position}
         </Header>
         <a href={props.link}>My profile</a>
-
         <form>
           <span>Введите должность</span>
           <input type="text" onChange={this.commitInputChanges} />
@@ -85,7 +81,6 @@ class WhoAmI extends Component {
     );
   }
 }
-
 const Wrapper = styled.div`
   width: 600px;
   margin: 80px auto 0 auto;
@@ -109,13 +104,11 @@ class App extends Component {
     );
   }
 }
-
 WhoAmI.propTypes = {
   name: PropTypes.string.isRequired,
   surname: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
 };
-
 // Старый метод
 // class Field extends Component {
 //   render() {
@@ -132,8 +125,6 @@ WhoAmI.propTypes = {
 //     );
 //   }
 // }
-
 // Props === {}
 // Можно использовать стрелочные функции для создания компонентов
-
 export default App;

@@ -2,13 +2,13 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import App, { Button } from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 // const element = React.createElement('h2', { className: 'greetings' }, 'Hello world!!!');
-
 const BigButton = styled(Button)`
-  margin: 0 auto;
   width: 245px;
+  margin: 0 auto;
 `;
 
 ReactDOM.render(
