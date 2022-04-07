@@ -97,6 +97,16 @@ function DynamicGreeting(props) {
   );
 }
 
+function HelloGreetings() {
+  return (
+    <div style={{ width: '600px', margin: '0 auto' }}>
+      <DynamicGreeting color="primary">
+        <h2>Hello world!</h2>
+      </DynamicGreeting>
+    </div>
+  );
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -111,6 +121,7 @@ class App extends Component {
     return (
 
       <Wrapper>
+        <HelloGreetings />
         <DynamicGreeting color="primary">
           <h2>Hello world!</h2>
           <h3>Lorem ipsum dolor sit amet.</h3>
