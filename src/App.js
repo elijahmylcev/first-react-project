@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import { Component } from 'react';
+import propTypes from 'prop-types';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const EmpItem = styled.div`
@@ -86,6 +86,17 @@ const Wrapper = styled.div`
   margin: 80px auto 0 auto;
 `;
 
+function DynamicGreeting(props) {
+  const { color, children } = props;
+  return (
+    <div className={`mb-3 p-3 border border-${color}`}>
+      {
+        React.Children.map(children, (child) => React.cloneElement(child, { className: 'shadow p-3 m-3 border rounded' }))
+      }
+    </div>
+  );
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -98,16 +109,27 @@ class App extends Component {
 
   render() {
     return (
+
       <Wrapper>
+        <DynamicGreeting color="primary">
+          <h2>Hello world!</h2>
+          <h3>Lorem ipsum dolor sit amet.</h3>
+        </DynamicGreeting>
         <WhoAmI name={this.person.name} surname={this.person.surname} link={this.person.link} />
       </Wrapper>
     );
   }
 }
+
+DynamicGreeting.propTypes = {
+  children: propTypes.node.isRequired,
+  color: propTypes.string.isRequired,
+};
+
 WhoAmI.propTypes = {
-  name: PropTypes.string.isRequired,
-  surname: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  name: propTypes.string.isRequired,
+  surname: propTypes.string.isRequired,
+  link: propTypes.string.isRequired,
 };
 // Старый метод
 // class Field extends Component {
