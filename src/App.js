@@ -107,6 +107,49 @@ function HelloGreetings() {
   );
 }
 
+function Message(props) {
+  const { counter } = props;
+  return (
+    <h2>
+      The counter is -
+      {' '}
+      {counter}
+    </h2>
+  );
+}
+
+class Counter extends Component {
+  constructor() {
+    super();
+    this.state = {
+      counter: 0,
+    };
+  }
+
+  changeCounter() {
+    this.setState(({ counter }) => ({
+      counter: counter + 1,
+    }));
+  }
+
+  render() {
+    const { render } = this.props;
+    const { counter } = this.state;
+    return (
+      <>
+        <button
+          className="btn btn-primary"
+          type="button"
+          onClick={() => this.changeCounter()}
+        >
+          clickMe!
+        </button>
+        {render(counter)}
+      </>
+    );
+  }
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -121,6 +164,8 @@ class App extends Component {
     return (
 
       <Wrapper>
+
+        <Counter render={(counter) => (<Message counter={counter} />)} />
         <HelloGreetings />
         <DynamicGreeting color="primary">
           <h2>Hello world!</h2>
@@ -131,6 +176,14 @@ class App extends Component {
     );
   }
 }
+
+Message.propTypes = {
+  counter: propTypes.number.isRequired,
+};
+
+Counter.propTypes = {
+  render: propTypes.func.isRequired,
+};
 
 DynamicGreeting.propTypes = {
   children: propTypes.node.isRequired,
