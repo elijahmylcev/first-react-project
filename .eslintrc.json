@@ -37,8 +37,9 @@
               3
           ],
           "no-console": "off",
-          "class-methods-use-this": ["error", { "exceptMethods": ["searchEmp", "render"] }],
+          "class-methods-use-this": ["error", { "exceptMethods": ["searchEmp", "render", "doSomething"] }],
           "no-param-reassign": ["error", { "props": false }],
-          "jsx-a11y/label-has-associated-control": "off"
+          "jsx-a11y/label-has-associated-control": "off",
+          "react/no-unused-class-component-methods": "off"
         }
 }

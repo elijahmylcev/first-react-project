@@ -14,6 +14,17 @@ class Form extends Component {
     this.myRef.current.focus();
   }
 
+  setInputRef(element) {
+    this.myRef = element;
+    console.log(element);
+  }
+
+  focusFirstTI() {
+    if (this.myRef) {
+      this.myRef.current.focus();
+    }
+  }
+
   render() {
     const { myRef } = this;
     return (
@@ -41,13 +52,30 @@ class Form extends Component {
             >
               Example textarea
             </label>
-            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" />
+            <textarea onClick={() => this.focusFirstTI()} className="form-control" id="exampleFormControlTextarea1" rows="3" />
           </div>
         </form>
       </Container>
     );
   }
 }
+
+// class TextInput extends Component {
+//   doSomething() {
+//     console.log('John Smith');
+//   }
+
+//   render() {
+//     return (
+//       <input
+//         type="email"
+//         className="form-control"
+//         id="exampleFormControlInput1"
+//         placeholder="name@example.com"
+//       />
+//     );
+//   }
+// }
 
 function App() {
   return (
