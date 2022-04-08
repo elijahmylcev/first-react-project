@@ -37,7 +37,8 @@
               3
           ],
           "no-console": "off",
-          "class-methods-use-this": ["error", { "exceptMethods": ["searchEmp"] }],
-          "no-param-reassign": ["error", { "props": false }]
+          "class-methods-use-this": ["error", { "exceptMethods": ["searchEmp", "render"] }],
+          "no-param-reassign": ["error", { "props": false }],
+          "jsx-a11y/label-has-associated-control": "off"
         }
 }
